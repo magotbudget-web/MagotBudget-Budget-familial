@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial/">🌐 Application en ligne</a> ·
+  <a href="https://tchantchoufidele11-sys.github.io/MagotBudget/">🌐 Application en ligne</a> ·
   <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial/privacy.html">🔒 Politique de confidentialité</a>
 </p>
 
