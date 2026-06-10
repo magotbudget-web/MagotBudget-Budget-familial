@@ -1,33 +1,76 @@
 # MagotBudget-Budget-familial
-Gérez budget et dépenses, scannez vos tickets. Privé, hors-ligne, en famille.
+<p align="center">
+  <img src="feature-graphic-1024x500.png" alt="MagotBudget" width="640">
+</p>
 
-MagotBudget vous aide à suivre votre budget et vos dépenses au quotidien, simplement et en toute confidentialité.
+<h1 align="center">MagotBudget</h1>
 
-Pensée pour les familles comme pour un usage personnel, l'application fonctionne hors-ligne et garde vos données sur votre appareil.
+<p align="center">
+  <b>Votre budget, en famille et 100 % privé.</b><br>
+  Application de gestion de budget et de dépenses — locale, hors-ligne et chiffrée.
+</p>
 
-— CE QUE VOUS POUVEZ FAIRE —
-- Enregistrer dépenses et revenus en quelques secondes
-- Scanner vos tickets de caisse : la lecture automatique remplit le montant pour vous
-- Suivre vos budgets par catégorie et recevoir une vue claire de votre mois
-- Visualiser votre santé financière : épargne, dépenses, capacité à mettre de côté
-- Anticiper la fin du mois grâce à une prévision basée sur vos habitudes
-- Gérer plusieurs devises et convertir avec des taux à jour
-- Exporter vos données vers Excel quand vous le souhaitez
+<p align="center">
+  <a href="https://tchantchoufidele11-sys.github.io/MagotBudget/">🌐 Application en ligne</a> ·
+  <a href="https://tchantchoufidele11-sys.github.io/MagotBudget/privacy.html">🔒 Politique de confidentialité</a>
+</p>
 
-— EN FAMILLE —
-- Partagez un budget commun avec vos proches
-- La synchronisation est chiffrée de bout en bout : le serveur ne peut pas lire vos données
+<p align="center">
+  <img src="https://img.shields.io/badge/PWA-installable-2ea44f">
+  <img src="https://img.shields.io/badge/Android-Capacitor-3DDC84">
+  <img src="https://img.shields.io/badge/hors--ligne-oui-0f223c">
+  <img src="https://img.shields.io/badge/langues-FR%20EN%20ES%20IT%20DE-144d5a">
+  <img src="https://img.shields.io/badge/prix-gratuit-d4af37">
+</p>
 
-— VOTRE VIE PRIVÉE D'ABORD —
-- Vos données restent sur votre appareil
-- Sur mobile, elles sont chiffrées par défaut (AES-256), sans aucune manipulation
-- Aucune publicité, aucune revente de données
-- La lecture des tickets se fait localement par défaut, sans envoyer vos photos
+---
 
-— GRATUIT —
-Toutes les fonctions essentielles sont gratuites.
+## ✨ Présentation
 
-— LANGUES —
-Français, anglais, espagnol, italien, allemand.
+**MagotBudget** aide à suivre ses dépenses et ses revenus au quotidien, simplement et en gardant la maîtrise de ses données. Pensée pour les familles comme pour un usage personnel, l'application fonctionne **hors-ligne** et conserve vos informations **sur votre appareil**.
 
-MagotBudget : votre argent, vos règles.
+## 🧩 Fonctionnalités
+
+- **Saisie rapide** des dépenses et revenus
+- **Lecture de tickets (OCR)** : reconnaissance automatique du montant
+  - *Standard* — lecture locale, gratuite, sans compte
+  - *Google Vision* — haute précision, en option avec votre propre clé
+- **Budgets par catégorie** et vue claire du mois en cours
+- **Santé financière** : épargne, dépenses, capacité d'épargne (score sur 100)
+- **Prévision de fin de mois** basée sur vos habitudes
+- **Multi-devises** avec taux de change à jour
+- **Export Excel** de vos données
+- **Synchronisation famille** — partage d'un budget commun
+
+## 🔐 Confidentialité & sécurité
+
+- Vos données restent **sur votre appareil**
+- Sur mobile, **chiffrement par défaut** (AES-256-GCM, clé dans le coffre sécurisé du système) — aucune manipulation
+- Synchronisation famille **chiffrée de bout en bout** : le serveur ne peut pas lire vos données
+- **Aucune publicité**, **aucune revente de données**
+- Lecture des tickets **locale par défaut** (vos photos ne quittent pas l'appareil)
+
+## 🌍 Langues
+
+Français · English · Español · Italiano · Deutsch
+
+## 🛠️ Technologie
+
+- Application **mono-fichier** HTML / CSS / JavaScript
+- **PWA** installable + version **Android native** via [Capacitor](https://capacitorjs.com/)
+- Stockage local : **IndexedDB** + localStorage
+- Chiffrement : **Web Crypto API** (AES-GCM, PBKDF2) + Android Keystore
+- Graphiques : Chart.js · Export : SheetJS · Synchro : Google Firebase
+
+## 🚀 Utilisation
+
+- **Web / PWA** : ouvrez l'[application en ligne](https://tchantchoufidele11-sys.github.io/MagotBudget/) et installez-la depuis votre navigateur (« Ajouter à l'écran d'accueil »).
+- **Android** : disponible prochainement sur le Google Play Store.
+
+## 👤 Auteur
+
+Développé par **Fidèle TL**.
+
+---
+
+<p align="center"><sub>© MagotBudget — Tous droits réservés. Code publié pour l'hébergement de l'application web ; il ne s'agit pas d'un logiciel open-source.</sub></p>
