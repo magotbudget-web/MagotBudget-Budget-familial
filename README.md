@@ -1,4 +1,3 @@
-# MagotBudget-Budget-familial
 <p align="center">
   <img src="feature-graphic-1024x500.png" alt="MagotBudget" width="640">
 </p>
@@ -11,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://tchantchoufidele11-sys.github.io/MagotBudget/">🌐 Application en ligne</a> ·
-  <a href="https://tchantchoufidele11-sys.github.io/MagotBudget/privacy.html">🔒 Politique de confidentialité</a>
+  <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial/">🌐 Application en ligne</a> ·
+  <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial/privacy.html">🔒 Politique de confidentialité</a>
 </p>
 
 <p align="center">
@@ -64,7 +63,7 @@ Français · English · Español · Italiano · Deutsch
 
 ## 🚀 Utilisation
 
-- **Web / PWA** : ouvrez l'[application en ligne](https://tchantchoufidele11-sys.github.io/MagotBudget/) et installez-la depuis votre navigateur (« Ajouter à l'écran d'accueil »).
+- **Web / PWA** : ouvrez l'[application en ligne](https://magotbudget-web.github.io/MagotBudget-Budget-familial/) et installez-la depuis votre navigateur (« Ajouter à l'écran d'accueil »).
 - **Android** : disponible prochainement sur le Google Play Store.
 
 ## 👤 Auteur
