@@ -63,7 +63,7 @@ Français · English · Español · Italiano · Deutsch
 
 ## 🚀 Utilisation
 
-- **Web / PWA** : ouvrez l'[application en ligne](https://magotbudget-web.github.io/MagotBudget-Budget-familial/) et installez-la depuis votre navigateur (« Ajouter à l'écran d'accueil »).
+- **Web / PWA** : ouvrez l'[application en ligne](https://tchantchoufidele11-sys.github.io/MagotBudget/) et installez-la depuis votre navigateur (« Ajouter à l'écran d'accueil »).
 - **Android** : disponible prochainement sur le Google Play Store.
 
 ## 👤 Auteur
