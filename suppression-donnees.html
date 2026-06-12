@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suppression des données — MagotBudget</title>
+<meta name="description" content="Comment supprimer vos données dans l'application MagotBudget — Gestion de budget familial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --encre:#0b3733; --sarcelle:#0d9488; --sarcelle-pale:#e7f4f1;
+    --or:#c89a2e; --or-clair:#e8c766; --papier:#f7f5ef;
+    --texte:#26312e; --texte-doux:#5b6b66; --ligne:#e3ddd0; --alerte:#b3422f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papier);color:var(--texte);
+    font-family:'Outfit',system-ui,sans-serif;font-size:17px;line-height:1.7;}
+  .hero{background:linear-gradient(160deg,#0b3733 0%,#0f4d46 60%,#11574e 100%);
+    color:#f3efe2;padding:64px 24px 76px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;
+    border-radius:50%;background:radial-gradient(circle,rgba(200,154,46,.32),transparent 70%);}
+  .hero-in{max-width:720px;margin:0 auto;position:relative;}
+  .chest{width:72px;height:72px;display:block;margin-bottom:18px;border-radius:18px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5);}
+  .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--or-clair);
+    font-weight:600;margin:0 0 10px;}
+  h1{font-family:'Fraunces',serif;font-weight:650;font-size:clamp(34px,6vw,52px);
+    line-height:1.08;margin:0 0 14px;}
+  .hero p{margin:0;color:#cfe0da;max-width:54ch;font-size:18px;}
+  main{max-width:720px;margin:0 auto;padding:40px 24px 24px;}
+  h2{font-family:'Fraunces',serif;font-weight:650;font-size:24px;color:var(--encre);margin:44px 0 16px;}
+  p{margin:0 0 14px;}
+  strong{color:var(--encre);}
+  a{color:var(--sarcelle);text-decoration-color:rgba(13,148,136,.35);text-underline-offset:3px;}
+  a:hover{text-decoration-color:var(--sarcelle);}
+  /* ----- étapes "clé" ----- */
+  .etape{display:flex;gap:18px;background:#fff;border:1px solid var(--ligne);
+    border-radius:14px;padding:20px 22px;margin:14px 0;
+    box-shadow:0 8px 22px -16px rgba(11,55,51,.3);}
+  .cle{flex:none;width:44px;height:44px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--or-clair),var(--or));
+    color:#fff;font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 0 0 3px rgba(255,255,255,.35);}
+  .etape div p{margin:0;}
+  .etape div p + p{margin-top:8px;}
+  /* ----- encart "aucun accès" ----- */
+  .verite{background:var(--sarcelle-pale);border:1px solid #bfe3db;border-radius:14px;
+    padding:22px 24px;margin:20px 0;}
+  .verite h3{margin:0 0 8px;font-family:'Fraunces',serif;font-size:20px;color:var(--encre);}
+  .verite p{margin:0;}
+  /* ----- tableau ----- */
+  .tbl{width:100%;border-collapse:separate;border-spacing:0;margin:18px 0;font-size:16px;
+    background:#fff;border:1px solid var(--ligne);border-radius:14px;overflow:hidden;}
+  .tbl th{background:var(--encre);color:#f3efe2;text-align:left;padding:13px 16px;
+    font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;}
+  .tbl td{padding:14px 16px;border-top:1px solid var(--ligne);vertical-align:top;}
+  .tbl .oui{color:var(--sarcelle);font-weight:600;white-space:nowrap;}
+  .warn{background:#fdf1ee;border-left:4px solid var(--alerte);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:22px 0;font-size:16px;}
+  .warn b{color:var(--alerte);}
+  footer{margin-top:64px;background:var(--encre);color:#9fc4bb;text-align:center;
+    padding:30px 24px;font-size:15px;}
+  footer a{color:var(--or-clair);}
+  footer .sep{margin:0 10px;color:#3f6b62;}
+  @media (max-width:540px){ body{font-size:16px} .etape{flex-direction:column;gap:10px} }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-in">
+    <img class="chest" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAIAAABoJHXvAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAVZUlEQVR42u2dW6ht11nH/98YY1323ufknJzcE0OOPeklYkyqEGkf1DQFY19qGy8UqlCQqiAilgZBH4o+FAQfRAXxJQ2IaGm9gIKYtAnFWtskxBCFmKShsSW3kyYnydm3Oef4/j7M25jXPffJ2WvN08zF4bD2WmvOOeY3xnf5jfGNb0ry0HtIAiApgJAE0k9Ag/I9QRS/TD/LXgTyzwGQUn5T/amoFH8KUD1h5ajwWMPa5yhPEpwByJrfdpTkN8H0qPD84f9CQ1JEWr7SsoWqGrZWKN1HMfglwham10IoyLavatJwtXYjOEft80C+lR/UOizri8oneeshkgk5O7AqbjRvuHkz4cf1xne/qR3VemzXaYvGt7YK7D+q3obWyzXfNDss/dO1Htm8N7By7bQlxZhqvtqlgOpw65ZXRX07eiv8Q0RCzetrW0cHFzam/0Zqv09HnUBw0KtmllJD1nVagdT0tXhVNExqQ6cyIhpirKgiOwXOlk4KzkG0KnS9JS0azNy+hAanPG/HUc0+O1C3hvZcVXHzmywsE1HrV3Yqt3RKA06CwZWNFIKlspf/Z+MJAlDCEV+qfmrfKx0rlGwMsnAe4QiTsKGhGUHF3CJ0fumxgoohLRqfSwm5R5bcmuXfVsUqlPRHjd6DpGNYGsJl9okxptlnUowQ5qLKbkvA9FORQrIVe1uasaCFEtoGB1IqTcluMhMV03OLVsYphJngJBjaLapNSbsqv/9cLVJD0nZULZpAGTJIJgRlIffamE2PysIZVG9L23VLciFmx4X2hlKO4KbJSkWhDXVUSkWBTOVaZfiD1J0HtifrS7Bl6BQ362oDp2YhA40OrEphvKtDoOYqibqvZsNitDt/tkQHIqWWBGOT4VEVtWfd2XVGNBJqHVsbX78vQqqjrW4eyk/Y5aSVirYAht0WG2H/ZwrV6XUDHyAto6AZ2ARCLMR9cIAUSr60GCKBRFv8CnMLI/VwpDIEmiFlcb6WgFak9b7CEKO9+9vvi6pZF0rV/maXkM4oIPyZa0aDzfdBXBNIqCq4ShOZ3laoWyydYo9uVb1xdiNS88ZhwBKGEr1RBluUO6A6hneddzuoDKxWqOhVR9gcblVcqbenOiJrg6ZLt/KwniYLTUFhNlbzC4ceL7W+kgtMWi0hAJNCXyNsFNaPCt8YBsEnS39XgFse/2XxbvptfpTkpzPFaBKirRcR0nF+L5XGF7Edte6PU0uY+rDqCUNLmDYja2GIwKkTrtGxBAFIMMKkyw65I6VjOSQd423RsbSG2pcIHaPV27Vp2ETH66TjooO1X7zlTEd1AE50vGI6xoFOq+nDJjoeHR03elHCDpvoeHR0XLdYwecOEx2Pj467HWSVw+p0rBxKx8jouIN12um42mclqDZxLTSfUtihwXScmsROOuYF0TG76DhT2FpAlMV0wZxDg46lQ1YSTiC4qognOh4FHbcHKZLNJU50PDo6BkxNhiKZTNxExyOk4y7GKDtsouNR0XFPR7iJjkdIxz2NdEJMdDw2Os79VhkuIY8MHPJRMNHxeOi41q2BePPJ34mOR0XHxQpnwAypaxfXE1lNdLwuOm6bzQBoJOewiY7HRcct7i0zz+Iw0fH46JjUfFhIESKkw9H1WZiJjtdEx3lDTPuK80THY6PjTLfANOOmktPRc7qJjtdFx5lu5X4rHCsu3Dkz0fEI6DjLXqvINVdfSLB7ZaLjcdCxMNetfGGyTJOt+LCJjkdAxwasB5Y12+wmOh4THbOy6zWd0W3uD5voeGx0DHSe0010PEI6pgQSEKmmudWwZqLjEdBxz8vVIXWi4xHQMbsPqWdNTXQ8Bjru1bBy6XKi47HQcXUYSdgpriz3MdHxaOi42uUV0nWY6Hh8dNybNTXR8fjouHlUCM4THY+OjpsLXWFYP9Hx6Og4NcwipjmgXWsQPNHxeum4NWMj82ETHY+Qjlt1qz5bP9HxeOi4VbcqMx0THY+KjhvDpSzn4CY6HiEdNzxJHrbU5xInOh4HHbdyWOpT3ZjoGCUda6VEGOq2t6hkNoiO8w66ZOi4Yr1EsrClubyyRjoGNXcx+UF5XZ5aPTgptF2qTK3VMtKFKlIohBZJKoFig00L0WUWV0nH4WxGTXpuHHRMoRoAtB6WVCkC/bJmNZjGKWnUQwFpsohZCIqK5LVUUwdZ9EfqPYIuKfRMqJKFP9koLK2lhyFoMiRvWX8/OjpOAyURSYv2hbzkRkLHKrMsw45qNPRhYmBIKZRCkIcJKlIErxQFMulIGv6msswr1WUjSQh4FEW1UPZ4ds0gVKGIpnMp+U9WRcdouHCEe5zXSMf54g4cvaehwGgE0IsphJRmtNbrvAQVIbPRr5Tc1gsklrwabl7DuDCwhlKGdBqYvdAQAVYhMB4O9A7q4djwNEdEx2HWWq28dqNu/VroWEA16pYxrLVLB2804AdFUT0k9wlSm7ElIAopfiEouyucqQJAmrKTqNUIEzRFxKhCLyb2xkGRRK2LUEdEx31168dAxyTj2capm27FxuV2pmKi7BoSQmVLMCABFYY+pjR2ReARRsJlWMi6fJmaWcnsgWJ/R+Jzb53930cRbYvIaui4C8WKqal107FSLN2M6mL1iUkI2FojgvcsPDgaKyU1v11pff0MrUEgy94WFYk2jm9K7MAoC3pWQscAW3srq0i6djoGYOLo+88/Hom3uhB6mqic2q0NHg40PIK39SIxA6AmgZ+LeslC41XQccdXedAxjrVjn+zteY3JXdBQLkDcrHQmTUNw0qm0LQNBiEgANbExpoxHV0LH3XGKuLa56jWsHXtoFJlYFzQJQNACHCLd/L0AKjAAFd4YEagmgKSPvtA0LmA5tVh53/xKIBQ16oCFtRHY7IkjpOOe6TE3hrVjgFSz5+NdTysiBCXp6Kyabyj/VIldfNyYbb+cR3uO9BtL+NiLn8O+SSyGirUcE8aQCp352ZxRHtesgo4LpGtU2msJ69exdgwQiPZ9RDFipP7AA+n2TEHdHi4S7sfGPPm4feUlALNrr/W3vDdaJDGiTVp/WK9GgSEVVNFZGeeugo57murGsHaczk/sx9zzNmtHtg80SKYoFrsYRH3FshkAJm5m//uZ2bOvzu1lkYDPnLWJlVtPkxHVFgvUHHDC7OpCAQwMg0mUVdBx1xJuGSWud+04NStRjL3EQCDQqrk7MApPJYM3d/HG3uYf/cW9x05aCLdf55/83h+/9tabW84nXg55QlJoCKGBoRpjs5nKVdBxz8uNY+2Y1vpji/m5tyI/dwgeiHgIjyPYj12U7D78rw8ulidAjfa2k3g/iq1lrLQXckYSjDYWxgZruSug43L9vIC7Woetde04i+qvPL6ME/nO63tenOFhe0wEMexsOTP/+IUHjV0CUL978+kNgjv7nrAXEnRAr9ywJ5yhxpWKC0dMxyy1qL7YVl9xXsfaMUkIrZXdK04unz+L/RxSB4b1mV+iFYlOXb44I8vz52cgjh2XUyext7dP2nJieBgnCJAIt6hXHdtY+igSYyrdclR0fLBJHEtmdQoP3pOiasJxq433rX8qHEgje1ddLicviwjMDaCacJbOLheXPPCEeRaPBVU0EhMD87AHjpSOu0KPSpS41sxqEFRR0Rl17hl50CoHxgbFnyoxYGyyZOKtSQBKMgNnahOIihptUyn0xCEELWLLmeQT/Kui4z4NG0FmNQW0KoaAJEqrVFNM1g53YjQqsm/VQuacqSCBocDQGgENVA0I074u1+rDlKrAvFiDOUo6lu78kUqXuxFkVqdLFKYwNiT08ENPxYjq3OzHKq/tqjVwy6UYp3EcR/tizMZ8bgDSDDx9uspEFQyb2LyIdNw6kZ0e5EaQWR3emFDTBMNDT/4qYa3Z36NunPiRu+68+bafPHHlNdbaeG/37AvfefrRr7341H85HxOGxKCIMZuDLqegVkbHHb1RfTLEmjOrC+xDkDB1mJe1PL8Xnzz9Ez//6d+55sx74T3cAmYG6PW33nHbhz/ylb/6/KMP/PPm5nH4YVEZhSmxCPvjwotOx626kxdpDkL+tWVWF8fRq0J5iAlwQAwgRuK9/ePXveeTn/381hVX725vb2zOX//uM69877vWyKnr33XqpnfPT1zpE3KwxEh4KbJ7hEdOxz2muUwScmnp36On4+7Mas0evilQqPGEUuxAmWbTjaLU84n95U/8xtZVN8TnXtrYWnz9H+77jy/fF+9sQ2Z264oP3vOJeHfHeYEHdZD+KuCL5DiacKgeMR3XfL8UuoR65u9aMquRZfaVj2YnlIM0LEUET7PnccPtHzjz/jv2zp9bHtv89hPf/OoXv3DZTBanrlEaiXcevv/Pjx8/vtxYqAcpQ06fP/+O9WyDo6djVEu0Sets/SrouGvfcfawAyMwhKpCB4b1CqVEbuNX7v2Da953u1e1Qp/Ijadv/uyf/o1YG6tzm7PH//4vv/alL3IvStIcrGGC02xmzuQdVl9xPjo6DqaZpDbia+C8xn3HuaNUKkVlkIZZyM5+fNP73nfF6VsSLJbcF0ii4hMVgVLESPzGy48/9i1v5x5OJbGqlEGjIQWM4JHYXBkdU9NkZ9O+4rwSOs5CwI59x0ZESXgYD+MBGWYSPTF3y1e/8+TnPvWxX/3dP/zRn/kpvxvr3ut/9vu//sZLLy/MMSCebVhN/MzOVBPAegyFPILKmUECWoWBekCOko7rEXxrr7ux7DtOR4CmkZWQg5RAhDOat16PP3D3Pde85xaN9oVqZpsf/qVP725vWzNzeOvf/+lLO6+ew8zmWdsYOOgVpEiQxHjUdFyXYeeK8/r3HaMoJAfVtMMO1jACtGZ/f+faM7d/7Lc/A9jkjVesNXAbP/6z90AssDz79IP/cv99CzE+3R5B7XnwVqORokIqmBlX6WKCi0TH+YYMAdgpbccx7DvO/JmkK3CqRYXo/slDMZFJRONo568/d++VN7/77l/4ZLK/57bcU4985Wtf/rsrTl7/wnP/w8ibxcbO7nkRcfO5pin4MqjDQC2KQLA6hi82HQt1UBjpMIZ9xxQlKGqhCoqHDhIorerczl59/rkXnnqSjz1yxwfvvPz6G5P9/ZtO3xRtn3v4375+6hhkPnt5e/9d77/t1PHLnvrGN+ebTomBUUdsMwbO5r6OlI4hxZ685oXKOOszP7ds0HGZe1yj4wyEqza9oOOW0jH5tGDuOkywQBxW8KamRJXI02c18YZ5WmjvP6qh0hgry83NaGf3jfPbt/30XUmks+XW7Xd+6Pi1p8zxy06dOXPH3R/96G/+1msvfve5bz0221j4DBEP+Jfmuf3wCVqDYn9atUta+Cz8igRhUEsvaKfjSpxR2x5YahPhMIp9x6k9zLJxcis0gC5zGNHEby0XTzz0wKmrrvvIpz4NGIv5nR//NSQxDLHYAqwkEUU952Q0bPK3yESqlBlYAR03p9/QLA62rqpcEBFKNmlBk7oN8tDpf6Ruzd0Df3v/95579kMf/8Ubb755IZuwFj5+86Wzzz35xBP/+Ygsl+o96xODPSCWsociSBZeAR33jAC3WjpuVuWqZI+QVIUf6mSqTAYx0FML8+w3HnrqsW9c9UPXXn71dW62iLfPf/+l75178SVnZ3YxZwrVQ9SA1WdKFlhw9HTcMwLcuqtyIS+UH4taAAmdwhg9dI8ZASgRuLF5TIk3n3/htW//X7aGNHNbG8eUoGc24cSDrZWHScQDKvCAzfzuSug4DUcPKA623qpcpbcAPIkLULFcht4TgJktFvNFce7Y41BpbgIooVo6gi7dOgo67oF0h5XRcU9VLqSzU5LiCAmPt/2ivp2jJU0myHqqiOCxGjruKw42hqpcxSYQsjXDTt5+73WfsP2rfFOKCRcwgloUR0vHfcXBVkfHHVW5sutCAC+w9PTYmNGz3J6syLcsF/PsbSmhGUTm+xnKcJkwrdtnczaQ8P6R12RJMFO/q6nn0rLmxwrouHUJu0XD1lKVS/JtwmSyMePVx/Ts2W1dCGupOMzniLuy1LISHJWKXuFseqjmgeirJ0wLlxCAJHF842XJYu7UU2hV9G2vHffQMQI67pk3oRtLVa4sM2DvjjNbnvHZN42RcmtlxTN1MjWrKyc2+EI7Io50AiMkqqjo4pMn5MduWDrd8RTKSum4YwmblUcqrrFmdaq5KpYanXQ7d92yuR8pykpQEqwQalmQSMqIJbOdAW7XBlxFLRmk/5ReMzVYrkhAcovZTHfFJ5S5NBbRjpSOu66VpbmtvWY1qAZKzIi58bGTHTdLRZRuLPfhDjbmpTQC9c/rdKgEPRg+SKZmXQ1R7uZrLiqlJ/R+T6iEAYzADwvFLw4d92ROunHUrBYPZ+gJenEE1Of6pFnNDin3rWUNIEH4bLe51it3ZSleLZFFjqVVUAmVtRgMHgYiRny69LMyOkZ4flaGvuuM4NdQs7qjokvlET6V6h2S+S3JNrlWd6oz7CVpMVLV+j/pCU015pK10PHBe5wvnZrV0oipJM8wWNu+44tOxz2icFPN6nWtHV/YDLKbalava+24h44Z3Ayrpc3cauj4UqlZfTEyqy8CHaPMlwclrH7A+qM83uE1q9dOxwdKw/UEeD+oT3RqRBnrWTs+VMBVSMO9A5/otMrM6guj43oQh7LIuXsHPtFplZnVF0bHYZZftk1EGuD8znmi0yozqy+Mjnt+5gbf9irpuDka1l+Va5V03PMzN9HxCOm455duouMR0nHVI7G+4jzR8djoOFuCaPOpbqLjEdJxT6K6m+h4hHTM7tt0Ex2PkI77ZusnOh4hHVevLWEn1CZ/JzoeBR33adhExyOk4x5/78Jc6YmOR0LHfRrGiY7HR8fVOEA6q2pPdDwSOmYl27y6x7mjUNFEx+uk455ruYmOR0jHVXl2Lq9MdDwWOu5bXpnoeIR0nF+rpViSm+h4hHRcyPyAPc4THY+EjgftcZ7oeDx0fPAe54mOR0XHjYhG2tfDJjoeBx3XdKuy9c01oWqi47XTcTj/TpbPbW48e2Wi43HQcfh5mJRdf47zRMcjoeP0LoszqDKv0V8UB5voeEx0nJ4hlwyzSXllPayf6HgkdFwtTyj1J0NMdDw2Oq7cfe05zpjoeHx0HPIrW2c6Llk6Dp6b1WmO5JKj47RUlISFMNqWVy5FOu6xVAGHsKydc0nQcc0Shm0eYkYPVOSCjivVnjAwDO6wfqlPbV06OJRLL5/+d6HNGC6NAXSMDjoeepvuB5qOOYCO0f+sxLXQca2GVK9JvHA6LiIOP/h0A/XsguiY5aTO4SfABtIxRQ7PFR3yDOm45/X/zOv1ww5/xUAAAAAASUVORK5CYII=" alt="MagotBudget" width="72" height="72">
+    <p class="eyebrow">MagotBudget · Gestion de budget familial</p>
+    <h1>Supprimer vos données</h1>
+    <p>Vos données vous appartiennent : leur suppression est entre vos mains, immédiate et définitive. Cette page décrit les deux procédures, directement dans l'application <strong style="color:#f3efe2">MagotBudget</strong> (éditeur : MagotBudget).</p>
+  </div>
+</div>
+
+<main>
+  <h2>Procédure 1 — Données stockées sur votre appareil</h2>
+  <div class="etape">
+    <div class="cle">1</div>
+    <div>
+      <p><strong>Dans l'application :</strong> ouvrez <strong>Réglages → Réinitialiser</strong>, puis confirmez. Toutes les données locales (opérations, membres, reçus, réglages, code de sécurité) sont effacées immédiatement et définitivement.</p>
+      <p><strong>Alternative :</strong> désinstaller l'application supprime également l'ensemble des données locales.</p>
+    </div>
+  </div>
+
+  <h2>Procédure 2 — Données de la synchronisation famille (si activée)</h2>
+  <div class="etape">
+    <div class="cle">2</div>
+    <div>
+      <p>Si vous avez activé la synchronisation famille (fonction optionnelle), ouvrez <strong>Réglages → Synchronisation famille → Quitter la synchronisation</strong>. Votre profil membre et vos données synchronisées sont alors supprimés des serveurs. Les données synchronisées sont chiffrées de bout en bout : elles sont illisibles par l'éditeur, y compris avant leur suppression.</p>
+    </div>
+  </div>
+
+  <div class="verite">
+    <h3>Pourquoi l'éditeur ne peut pas supprimer vos données à votre place</h3>
+    <p>MagotBudget est conçue ainsi : vos données sont stockées <strong>sur votre appareil</strong>, et celles de la synchronisation famille (optionnelle) sont <strong>chiffrées de bout en bout</strong> avec une authentification anonyme. L'éditeur n'a <strong>aucun accès à vos données, ne peut ni les lire, ni les identifier, ni les relier à une adresse e-mail</strong>. C'est une garantie de confidentialité — mais cela signifie aussi que la suppression s'effectue <strong>exclusivement par vous-même</strong>, via les procédures 1 et 2 ci-dessus, qui sont immédiates, complètes et définitives.</p>
+  </div>
+
+  <h2>Données supprimées et données conservées</h2>
+  <table class="tbl">
+    <tr><th>Données</th><th>Supprimées ?</th><th>Délai</th></tr>
+    <tr>
+      <td>Opérations financières, noms des membres, reçus, réglages, code de sécurité (stockage local)</td>
+      <td class="oui">Oui — complète</td>
+      <td>Immédiat (Réinitialiser ou désinstallation)</td>
+    </tr>
+    <tr>
+      <td>Données de synchronisation famille (chiffrées de bout en bout)</td>
+      <td class="oui">Oui — complète</td>
+      <td>Immédiat (Quitter la synchronisation)</td>
+    </tr>
+    <tr>
+      <td>Identifiant d'authentification anonyme (Firebase)</td>
+      <td class="oui">Oui</td>
+      <td>Immédiat (Quitter la synchronisation)</td>
+    </tr>
+    <tr>
+      <td>Données conservées après suppression</td>
+      <td colspan="2"><strong>Aucune.</strong> L'éditeur ne conserve aucune donnée utilisateur après suppression. Aucune durée de conservation supplémentaire ne s'applique.</td>
+    </tr>
+  </table>
+
+  <div class="warn"><b>Important :</b> la suppression est définitive. Si vous souhaitez conserver une copie de vos données avant suppression, utilisez <strong>Réglages → Sauvegarde &amp; export</strong> (export JSON ou Excel).</div>
+
+  <h2>Contact</h2>
+  <p>Pour toute question sur cette procédure : <a href="mailto:magotbudget@gmail.com">magotbudget@gmail.com</a>. Notez que l'éditeur ne peut pas effectuer de suppression à distance, n'ayant aucun accès aux données. Consultez aussi notre <a href="privacy.html">politique de confidentialité complète</a>.</p>
+</main>
+
+<footer>
+  © 2026 MagotBudget — Tous droits réservés
+  <span class="sep">·</span><a href="privacy.html">Politique de confidentialité</a>
+  <span class="sep">·</span><a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial">Application</a>
+</footer>
+
+</body>
+</html>
