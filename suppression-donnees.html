@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suppression des données — MagotBudget</title>
+<meta name="description" content="Comment supprimer vos données dans l'application MagotBudget — Gestion de budget familial.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    color: #1f2937;
+    line-height: 1.65;
+    background: #fafaf9;
+  }
+  header { text-align: center; margin-bottom: 36px; }
+  .logo { font-size: 44px; }
+  h1 { color: #0d9488; font-size: 1.6em; margin: 8px 0 4px; }
+  .subtitle { color: #6b7280; font-size: .95em; margin: 0; }
+  h2 { color: #0f766e; font-size: 1.15em; margin-top: 32px; border-bottom: 2px solid #ccfbf1; padding-bottom: 6px; }
+  .step { background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px 16px; border-radius: 6px; margin: 12px 0; }
+  .warn { background: #fef2f2; border-left: 4px solid #dc2626; padding: 12px 16px; border-radius: 6px; font-size: .95em; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .95em; }
+  th, td { border: 1px solid #e5e7eb; padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: #f0fdfa; color: #0f766e; }
+  a { color: #0d9488; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .85em; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💰</div>
+  <h1>Suppression de vos données</h1>
+  <p class="subtitle">Application <strong>MagotBudget</strong> — Gestion de budget familial · Développeur : MagotBudget</p>
+</header>
+
+<p>Cette page décrit la procédure permettant aux utilisateurs de l'application <strong>MagotBudget</strong> (disponible sur Google Play) de supprimer leurs données. MagotBudget est conçue « privacy by design » : par défaut, vos données restent uniquement sur votre appareil.</p>
+
+<h2>Procédure 1 — Supprimer les données stockées sur votre appareil</h2>
+<div class="step">
+  <strong>Dans l'application :</strong> ouvrez <strong>Réglages → Réinitialiser</strong>, puis confirmez. Toutes les données locales (opérations, membres, reçus, réglages, code de sécurité) sont effacées immédiatement et définitivement.
+</div>
+<div class="step">
+  <strong>Alternative :</strong> désinstaller l'application supprime également l'ensemble des données locales.
+</div>
+
+<h2>Procédure 2 — Supprimer les données de la synchronisation famille (si activée)</h2>
+<div class="step">
+  Si vous avez activé la synchronisation famille (fonction optionnelle), ouvrez <strong>Réglages → Synchronisation famille → Quitter la synchronisation</strong>. Votre profil membre et vos données synchronisées sont alors supprimés des serveurs. Les données synchronisées sont chiffrées de bout en bout : elles sont illisibles par l'éditeur, y compris avant leur suppression.
+</div>
+
+<h2>Pourquoi l'éditeur ne peut pas supprimer vos données à votre place</h2>
+<div class="step">
+  MagotBudget est conçue ainsi : vos données sont stockées <strong>sur votre appareil</strong>, et celles de la synchronisation famille (optionnelle) sont <strong>chiffrées de bout en bout</strong> avec une authentification anonyme. L'éditeur n'a <strong>aucun accès à vos données, ne peut ni les lire, ni les identifier, ni les relier à une adresse e-mail</strong>. C'est une garantie de confidentialité — mais cela signifie aussi que la suppression s'effectue <strong>exclusivement par vous-même</strong>, via les procédures 1 et 2 ci-dessus, qui sont immédiates, complètes et définitives.
+</div>
+
+<h2>Données supprimées et données conservées</h2>
+<table>
+  <tr><th>Données</th><th>Supprimées ?</th><th>Délai</th></tr>
+  <tr>
+    <td>Opérations financières, noms des membres, reçus, réglages, code de sécurité (stockage local)</td>
+    <td>Oui — suppression complète</td>
+    <td>Immédiat (Réinitialiser ou désinstallation)</td>
+  </tr>
+  <tr>
+    <td>Données de synchronisation famille (chiffrées de bout en bout)</td>
+    <td>Oui — suppression complète</td>
+    <td>Immédiat (Quitter la synchronisation)</td>
+  </tr>
+  <tr>
+    <td>Identifiant d'authentification anonyme (Firebase)</td>
+    <td>Oui — supprimé avec le profil de synchronisation</td>
+    <td>Immédiat (Quitter la synchronisation)</td>
+  </tr>
+  <tr>
+    <td>Données conservées après suppression</td>
+    <td colspan="2"><strong>Aucune.</strong> L'éditeur ne conserve aucune donnée utilisateur après suppression. Aucune durée de conservation supplémentaire ne s'applique.</td>
+  </tr>
+</table>
+
+<div class="warn"><strong>Important :</strong> la suppression est définitive. Si vous souhaitez conserver une copie de vos données avant suppression, utilisez <strong>Réglages → Sauvegarde &amp; export</strong> (export JSON ou Excel).</div>
+
+<h2>Contact</h2>
+<p>Pour toute question sur cette procédure : <a href="mailto:magotbudget@gmail.com">magotbudget@gmail.com</a>. Notez que l'éditeur ne peut pas effectuer de suppression à distance, n'ayant aucun accès aux données. Consultez aussi notre <a href="privacy.html">politique de confidentialité complète</a>.</p>
+
+<footer>
+  © 2026 MagotBudget — Tous droits réservés ·
+  <a href="privacy.html">Politique de confidentialité</a> ·
+  <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial">Application</a>
+</footer>
+
+</body>
+</html>
