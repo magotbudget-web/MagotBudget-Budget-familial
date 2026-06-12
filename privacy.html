@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — MagotBudget</title>
+<meta name="description" content="Politique de confidentialité de l'application MagotBudget — Gestion de budget familial 100 % privée.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    color: #1f2937;
+    line-height: 1.65;
+    background: #fafaf9;
+  }
+  header { text-align: center; margin-bottom: 36px; }
+  .logo { font-size: 44px; }
+  h1 { color: #0d9488; font-size: 1.7em; margin: 8px 0 4px; }
+  .subtitle { color: #6b7280; font-size: .95em; margin: 0; }
+  h2 { color: #0f766e; font-size: 1.15em; margin-top: 32px; border-bottom: 2px solid #ccfbf1; padding-bottom: 6px; }
+  .intro { background: #f0fdfa; border-left: 4px solid #0d9488; padding: 14px 16px; border-radius: 6px; }
+  .note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 6px; font-size: .95em; margin: 16px 0; }
+  a { color: #0d9488; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .85em; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💰</div>
+  <h1>Politique de confidentialité</h1>
+  <p class="subtitle">Application <strong>MagotBudget</strong> — Gestion de budget familial · Dernière mise à jour : 30 mai 2026</p>
+</header>
+
+<p class="intro"><strong>MagotBudget respecte votre vie privée.</strong></p>
+
+<h2>1. Données collectées</h2>
+<p>Par défaut, MagotBudget fonctionne en local : les données que vous saisissez (opérations financières, catégories, membres du foyer, paramètres) sont traitées et stockées sur votre appareil. L'éditeur ne collecte aucune donnée à des fins commerciales et ne revend rien. Si vous activez la synchronisation famille (fonction optionnelle), vos données sont alors stockées de façon chiffrée de bout en bout sur les serveurs Google Firebase afin d'être partagées entre vos appareils (voir section 4).</p>
+
+<h2>2. Stockage local et chiffrement</h2>
+<p>Vos données locales sont stockées dans le stockage de l'application. Sur l'application mobile, elles sont chiffrées par défaut au repos en AES-GCM 256 bits, avec une clé aléatoire stockée dans le coffre sécurisé du système (Android Keystore / iOS Keychain) — aucune action n'est requise. Sur la version web, le chiffrement est optionnel (Réglages → Sécurité) avec une clé dérivée par PBKDF2 de votre code de sécurité. Pour la synchronisation famille, les données sont chiffrées avec une clé dérivée par PBKDF2 (600 000 itérations) et un échange de clés sécurisé entre membres : le serveur ne stocke que des données chiffrées qu'il ne peut pas lire.</p>
+
+<h2>3. Aucun tracking, aucune publicité</h2>
+<p>L'application ne contient aucun outil de tracking, aucune publicité, aucun cookie tiers, aucun pixel et aucun service d'analytics. Vos données ne sont jamais vendues ni exploitées à des fins publicitaires.</p>
+
+<h2>4. Connexions externes et services tiers</h2>
+<p>L'application peut établir des connexions externes : (a) chargement de polices et de bibliothèques optionnelles via un CDN public pour des fonctions avancées (lecture de PDF, OCR) ; (b) récupération des taux de change si vous activez la mise à jour automatique ; (c) synchronisation famille (optionnelle) via Google Firebase : vos données y transitent et y sont stockées chiffrées de bout en bout — le serveur ne peut pas les lire. Une authentification anonyme Firebase identifie techniquement votre appareil sans recueillir votre identité ; (d) lecture haute précision des tickets (Google Vision) : si et seulement si vous activez cette option et fournissez votre propre clé API, les photos de tickets que vous scannez sont envoyées aux serveurs de Google pour analyse, sous votre responsabilité. Sans cette option, vos photos ne quittent jamais votre appareil. Vous pouvez utiliser l'application entièrement hors ligne en n'activant aucune de ces fonctions optionnelles.</p>
+<div class="note"><strong>Note sur Face ID</strong> — Le déverrouillage par Face ID utilise WebAuthn avec l'extension PRF lorsque votre appareil le supporte (iOS 18+, Android 14+, macOS Safari 18+). Dans ce cas, votre code ne peut être déchiffré qu'en présence d'une authentification biométrique réussie. Sur les appareils plus anciens, Face ID fonctionne en mode « raccourci » : votre code reste la véritable protection cryptographique des données. Le niveau actif est indiqué dans les Réglages → Sécurité. Les données biométriques ne quittent jamais votre appareil.</div>
+
+<h2>5. Notifications</h2>
+<p>Les notifications affichées par l'application (par exemple lorsqu'un membre de la famille ajoute une opération) sont générées localement sur votre appareil à partir des données synchronisées, et s'affichent lorsque l'application est ouverte. Aucune notification publicitaire n'est envoyée.</p>
+
+<h2>6. Sauvegardes</h2>
+<p>Les exports de sauvegarde (JSON) sont générés localement et téléchargés sur votre appareil. Vous êtes seul responsable de leur conservation. Ils peuvent contenir vos données chiffrées ou en clair selon vos réglages.</p>
+
+<h2>7. Vos droits (RGPD)</h2>
+<p>Vos données locales restent sous votre contrôle total. Les données de synchronisation étant chiffrées de bout en bout, l'éditeur et l'hébergeur ne peuvent pas les lire. Pour exercer vos droits d'accès, de rectification, d'effacement, de portabilité et d'opposition (articles 15 à 22 du RGPD) : Réglages → Réinitialiser (effacement local), Réglages → Sauvegarde &amp; export (portabilité JSON), et Réglages → Synchronisation famille → Quitter (retrait de la synchronisation et suppression de votre profil membre).</p>
+<p>Vous pouvez également adresser toute demande de suppression de vos données par e-mail à <a href="mailto:magotbudget@gmail.com">magotbudget@gmail.com</a> — la procédure complète est détaillée sur la page <a href="suppression-donnees.html">Suppression des données</a>. Vous pouvez aussi contacter votre autorité de protection des données (en France : la CNIL, <a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+
+<h2>8. Contact</h2>
+<p>Pour toute question concernant cette politique : <a href="mailto:magotbudget@gmail.com">magotbudget@gmail.com</a></p>
+
+<footer>
+  © 2026 MagotBudget — Tous droits réservés ·
+  <a href="suppression-donnees.html">Suppression des données</a> ·
+  <a href="https://magotbudget-web.github.io/MagotBudget-Budget-familial">Application</a>
+</footer>
+
+</body>
+</html>
